@@ -1,0 +1,17 @@
+/* grid */
+.contain {
+    height: 500px;
+    width: 500px;
+    border: 1px solid rgb(170, 170, 170);
+    display: grid;
+}
+
+
+.item {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    /* 当父元素布局为grid时，子元素margin auto即可实现居中 */
+    /* flex也可以这样子，行内和块元素都可以 */
+    margin:auto
+}
