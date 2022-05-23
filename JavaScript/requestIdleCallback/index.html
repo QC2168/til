@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- requestIdleCallback是在浏览器空闲时调用的，属于background task -->
+    <!-- 这个API目前还是比较新的,考虑到兼容性问题,可以使用setTimeout代替 -->
+    <!-- 不兼容safari ie -->
+    <!--
+
+        参考资料:
+
+        Background Tasks API
+        https://developer.mozilla.org/zh-CN/docs/Web/API/Background_Tasks_API
+
+        requestIdleCallback
+        https://developer.mozilla.org/zh-CN/docs/Web/API/Window/requestIdleCallback
+
+ -->
+    <script>
+        console.log(window.requestIdleCallback)
+
+        window.requestIdleCallback = window.requestIdleCallback || function (handler) {
+            let startTime = Date.now();
+
+            return setTimeout(function () {
+                handler({
+                    didTimeout: false,
+                    timeRemaining: function () {
+                        return Math.max(0, 50.0 - (Date.now() - startTime));
+                    }
+                });
+            }, 1);
+        }
+
+
+        requestIdleCallback(() => {
+            console.log('idle')
+        })
+
+    </script>
+</body>
+
+</html>
