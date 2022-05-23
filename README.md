@@ -14,4 +14,6 @@
 
 - 复制文本到剪切板 & 监听监听剪切板中的内容 2022-5-23 `HTML\copy_text`
 
-- requestIdleCallback **幕后任务协作调度 API**  2022-5-23 `JavaScript\requestIdleCallback`
+- `requestIdleCallback` **幕后任务协作调度 API**  2022-5-23 `JavaScript\requestIdleCallback`
+- 实现`softBind`函数 2022-5-23 `JavaScript\softbind`
+  - `bind`函数多次调用会已第一次绑定的`this`为准，`softbind`已最后一次绑定传入的`this`为准
