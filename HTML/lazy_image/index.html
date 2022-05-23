@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 顾名思义，也就是当图片进入视图时再加载图片 -->
+    <!-- 减少不必要的网络开销 -->
+    <!-- 方法一 -->
+    <div class="box">
+        <img class="wall1" data-src="./images/wall1.png" src="" alt="">
+        <img class="wall2" data-src="./images/wall2.jpg" src="" alt="">
+    </div>
+    <style>
+        .box {
+            width: 100%;
+            height: 5000px;
+            padding-top: 3000px;
+        }
+
+        .box .wall1 {
+            width: 300px;
+            height: 200px;
+        }
+
+        .box .wall2 {
+            padding-top: 1000px;
+            width: 300px;
+            height: 200px;
+            display: block;
+        }
+    </style>
+    <script>
+        // 获取元素DOM高度
+        let imgs = Array.from(document.querySelectorAll('img'))
+        // 3008   3212
+        // https://www.geeksforgeeks.org/html-doctypes/
+        // 对于有doctype声明的页面使用document.documentElement.scrollTop
+        // safari 有自己的scrollTop函数 window.pageYoffset        // var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+
+        window.addEventListener('scroll', function (e) {
+            var scrollY = document.documentElement.scrollTop || window.pageYOffset
+            for (let img of imgs) {
+                if (img.offsetTop <= scrollY + window.innerHeight) {
+                    img.src = img.dataset.src
+                }
+            }
+        })
+
+    </script>
+</body>
+
+</html>

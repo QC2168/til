@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="./index.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 顾名思义，也就是当图片进入视图时再加载图片 -->
+    <!-- 减少不必要的网络开销 -->
+    <!-- 方法二 -->
+    <!-- 使用Element.getBoundingClientRect()，获取视口位置，元素大小 -->
+    <!-- https://developer.mozilla.org/zh-CN/docs/Web/API/Element/getBoundingClientRect -->
+    <div class="box">
+        <img class="wall1" data-src="./images/wall1.png" src="" alt="">
+        <img class="wall2" data-src="./images/wall2.jpg" src="" alt="">
+    </div>
+    <script>
+        // 获取元素DOM高度
+        let imgs = Array.from(document.querySelectorAll('img'))
+        window.addEventListener('scroll', function (e) {
+            for (let img of imgs) {
+                console.log(img.className,img.getBoundingClientRect());
+                if (img.getBoundingClientRect().top <= window.innerHeight) {
+                    img.src = img.dataset.src
+                }
+            }
+        })
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="./index.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 顾名思义，也就是当图片进入视图时再加载图片 -->
+    <!-- 减少不必要的网络开销 -->
+    <!-- 方法三 -->
+    <!-- 由于方法一，二有点复杂，又要获取元素位置，监听scroll，甚至是节流来配合减低性能开销 -->
+    <!-- 于是浏览器提供了IntersectionObserver，用于监听元素是否在当前视口  -->
+    <!-- https://developer.mozilla.org/zh-CN/docs/Web/API/IntersectionObserver -->
+    <div class="box">
+        <div>123</div>
+        <img class="wall1" data-src="./images/wall1.png" src="" alt="">
+        <img class="wall2" data-src="./images/wall2.jpg" src="" alt="">
+    </div>
+    <script>
+        // 获取元素DOM
+        let imgs = document.querySelectorAll('img')
+        const observer = new IntersectionObserver((changes) => {
+            console.log(changes);
+            // changes: 目标元素集合
+            changes.forEach((el) => {
+                // 判断元素是否可见
+                if (el.isIntersecting) {
+                    const img = el.target;
+                    img.src = img.dataset.src;
+                    observer.unobserve(img);
+                }
+            });
+        });
+
+        // 添加监听
+        for (let img of imgs) {
+            observer.observe(img);
+        }
+    </script>
+</body>
+
+</html>

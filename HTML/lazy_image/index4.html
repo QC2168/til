@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="./index.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 顾名思义，也就是当图片进入视图时再加载图片 -->
+    <!-- 减少不必要的网络开销 -->
+    <!-- 方法四 -->
+    <!-- 将懒加载给浏览器处理 -->
+    <!-- 在img和iframe标签上可以添加上lazy-loading属性 ,浏览器将自动处理显示图像-->
+    <!-- 看网络请求 -->
+    <!-- https://addyosmani.com/blog/lazy-loading/ -->
+    <!-- https://developer.mozilla.org/zh-CN/docs/Web/Performance/Lazy_loading -->
+    <!-- polyfill https://github.com/mfranzke/loading-attribute-polyfill -->
+    <div class="box">
+        <img class="wall1" loading="lazy" src="./images/wall1.png" alt="">
+        <img class="wall2" loading="lazy" src="./images/wall2.jpg" alt="">
+    </div>
+    <script>
+        if ('loading' in HTMLImageElement.prototype) {
+            console.log('Browser supports loading...')
+        } else {
+            // Fetch and apply a polyfill/JavaScript library
+            // for lazy-loading instead.
+        }
+    </script>
+</body>
+
+</html>
