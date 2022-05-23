@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 参考资料 https://juejin.cn/post/6844903567795421197 -->
+
+<body>
+    <div>
+        <a href="https://juejin.cn/post/6844903567795421197">参考资料 纯CSS画三角原理解析</a>
+    </div>
+    <div class="triangle">
+
+    </div>
+
+    <!-- 聊天信息框小尾巴 -->
+    <div class="msgBox">
+
+    </div>
+</body>
+<style>
+    .triangle {
+        margin: 50px;
+        width: 0;
+        height: 0;
+        border-bottom: red solid;
+        border-right: transparent solid;
+        border-left: transparent solid;
+        border-width: 85px;
+
+        /* 相当于 */
+
+        /*
+        border: 85px solid transparent;
+        border-bottom: 85px solid red;
+        */
+    }
+
+
+
+    .msgBox {
+        margin: 50px;
+        width: 200px;
+        height: 40px;
+        border-radius: 10px;
+        background-color: rgb(230, 230, 230);
+        position: relative;
+    }
+
+    .msgBox::after {
+        content: '';
+        width: 0;
+        height: 0;
+        border: solid transparent;
+        border-width: 10px;
+        border-left: 10px solid rgb(230, 230, 230);
+        position: absolute;
+        top: 10px;
+        right: -17px;
+    }
+</style>
+
+</html>
