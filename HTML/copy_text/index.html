@@ -15,6 +15,9 @@
         <button onclick="execDocCopy()">execCommand</button>
         <button onclick="selectCopy()">selectCopy</button>
         <div class="cur_board">当前粘贴板内容:</div>
+
+
+        <p>除了这三种方法，还有可以给元素添加copy，cut，paste事件，分别用于监听用户向剪切板数据时，用户剪切数据时，粘贴操作时</p>
     </div>
 
 
@@ -54,6 +57,43 @@
             selectedText = selection.toString();
             console.log(selectedText)
         }
+
+
+        window.onload = async function () {
+            console.log('页面加载完成')
+            const result = await navigator.permissions.query({ name: "clipboard-read" });
+            if (result.state == "granted" || result.state == "prompt") {
+                console.log('允许访问')
+                try {
+                    const text = await navigator.clipboard.readText();
+                    boardDom.innerHTML = `当前粘贴板内容:${inputDom.value}`;
+                } catch (error) {
+                    console.log(error)
+                }
+
+            }
+        }
+
+        // 监听copy事件
+        window.addEventListener('copy', (e) => {
+            console.log('copy事件')
+            console.log('copy内容');
+            console.log(e.clipboardData.getData('text'));
+        })
+
+        // 监听cut事件
+        window.addEventListener('cut', async (e) => {
+            const text = await navigator.clipboard.readText();
+            console.log('cut text: ', text);
+        })
+        // 监听paste事件
+        window.addEventListener('paste', async (e) => {
+            // 拦截粘贴操作 由 Clipboard API 打印剪切板内容
+            // e.preventDefault();
+            const text = await navigator.clipboard.readText();
+            console.log('Pasted text: ', text);
+        });
+
     </script>
 </body>
 
