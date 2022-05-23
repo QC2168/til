@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <input type="text" class="inp">
+        <button onclick="copy()">writeText</button>
+        <button onclick="execDocCopy()">execCommand</button>
+        <button onclick="selectCopy()">selectCopy</button>
+        <div class="cur_board">当前粘贴板内容:</div>
+    </div>
+
+
+    <script>
+        // navigator.clipboard.writeText
+        // 获取元素
+        let inputDom = document.querySelector('.inp');
+        let boardDom = document.querySelector('.cur_board');
+        function copy() {
+            navigator.clipboard.writeText(inputDom.value).then(res => {
+                console.log('复制成功');
+                boardDom.innerHTML = `当前粘贴板内容:${inputDom.value}`;
+            }, reject => {
+                console.log(reject);
+            })
+        }
+
+        // 废弃了
+        function execDocCopy() {
+            console.log('调用了 document.execCommand');
+            console.log('该API已废弃')
+            console.log('https://developer.mozilla.org/zh-CN/docs/Web/API/Document/execCommand');
+            document.execCommand(inputDom.value);
+        }
+
+
+        // 选取复制
+        function selectCopy() {
+            alert('未实现')
+            const selection = window.getSelection()
+            const range = document.createRange()
+            // RangeAPI: 制造区域
+            range.selectNodeContents(inputDom);
+            selection.removeAllRanges();
+            // Selection: 选中区域
+            selection.addRange(range);
+            selectedText = selection.toString();
+            console.log(selectedText)
+        }
+    </script>
+</body>
+
+</html>
