@@ -11,7 +11,7 @@
 - `textarea` 禁止拉伸 2022-5-23  `HTML\textarea_no_stretching`
 - `CSS border`实现三角形及聊天信息框小尾巴 `CSS\triangle`
 
-## JAVASCRIPT
+## JavaScript
 
 - 复制文本到剪切板 & 监听监听剪切板中的内容 2022-5-23 `HTML\copy_text`
 
@@ -19,3 +19,5 @@
 - 实现`softBind`函数 2022-5-23 `JavaScript\softbind`
   - `bind`函数多次调用会已第一次绑定的`this`为准，`softbind`已最后一次绑定传入的`this`为准
 
+## TypeScript
+- 了解使用`TS`高级用法 2022-5-23 `TypeScript\UtilityTypes`
