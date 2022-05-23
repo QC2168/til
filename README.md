@@ -10,6 +10,7 @@
 - 元素水平垂直居中 2022-5-23  `CSS\元素水平垂直居中`
 - `textarea` 禁止拉伸 2022-5-23  `HTML\textarea_no_stretching`
 - `CSS border`实现三角形及聊天信息框小尾巴 `CSS\triangle`
+- `~ + 选择器不同之处` 2022-5-23 `CSS\~ + 选择器不同\readme.md`
 
 ## JavaScript
 
