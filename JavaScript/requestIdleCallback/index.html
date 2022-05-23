@@ -26,23 +26,33 @@
     <script>
         console.log(window.requestIdleCallback)
 
-        window.requestIdleCallback = window.requestIdleCallback || function (handler) {
-            let startTime = Date.now();
 
-            return setTimeout(function () {
-                handler({
-                    didTimeout: false,
-                    timeRemaining: function () {
-                        return Math.max(0, 50.0 - (Date.now() - startTime));
-                    }
-                });
-            }, 1);
-        }
+        // 使用setTimeout兼容requestIdleCallback
+        // window.requestIdleCallback = window.requestIdleCallback || function (handler) {
+        //     let startTime = Date.now();
+
+        //     return setTimeout(function () {
+        //         handler({
+        //             didTimeout: false,
+        //             timeRemaining: function () {
+        //                 return Math.max(0, 50.0 - (Date.now() - startTime));
+        //             }
+        //         });
+        //     }, 1);
+        // }
 
 
-        requestIdleCallback(() => {
-            console.log('idle')
-        })
+        // requestIdleCallback(() => {
+        //     console.log('idle')
+        // })
+
+        // 简单实现  兼容requestIdleCallback
+        // 踩了个坑IE不能用arrow fn
+        const rIC = window["requestIdleCallback"] || function (f) { setTimeout(f, 1) };
+
+
+        rIC(function () { console.log('idle') })
+
 
     </script>
 </body>
