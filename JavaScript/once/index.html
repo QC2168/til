@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function once(fn) {
+            let flag = false
+            let res
+            return function (...arg) {
+                if (flag) return res
+                res = fn(...arg)
+                flag = true
+                return res
+            }
+        }
+
+        const f = (x) => x;
+
+        const onceF = once(f);
+
+        //=> 3
+        console.log(onceF(3))
+
+        //=> 3
+        console.log(onceF(4))
+    </script>
+</body>
+
+</html>
