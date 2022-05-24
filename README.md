@@ -32,6 +32,10 @@
   -  由于不同系统显卡绘制的`canvas`时渲染参数，抗锯齿等算法不同，因此绘制的图片数据的CRC校验也不同
   - [相关插件库 fingerprintjs](https://github.com/fingerprintjs/fingerprintjs)
 - 实现`MyInstanceOf` 2022-5-24 `JavaScript\instanceOf`
+- 判断一个对象是否有环
+  - 收集对象中的对象，进行判断
+  - 使用`stringify`，在`catch`中`includes('Converting circular structure to JSON')`
+
 
 ## TypeScript
 - 了解使用`TS`高级用法 2022-5-23 `TypeScript\UtilityTypes`

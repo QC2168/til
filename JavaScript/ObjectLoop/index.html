@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let obj = { name: '_island' }
+        let obj2 = { name: '_island', a: { b: 1 } }
+        obj.obj = obj
+        console.log(obj)
+
+        // 方法一
+        // 判断是否有环
+        function isLoop(target) {
+            let return_flag = false
+            // 存放检测到的对象
+            let bucket = new Set()
+
+            const detect = (detectTarget) => {
+                if (typeof detectTarget !== "object") return
+                // 如果当前bucket有这个对象,说明有环
+                if (bucket.has(detectTarget)) return return_flag = true
+                // 把检测的对象添加到bucket
+                bucket.add(detectTarget)
+                let keys = (Reflect.ownKeys(detectTarget))
+                for (let key of keys) {
+                    // 递归检测对象
+                    detect(detectTarget[key])
+                }
+            }
+
+            detect(target)
+            return return_flag
+        }
+
+        // 方法二
+        function isCircular(obj) {
+            try {
+                JSON.stringify(obj)
+            } catch (e) {
+                return e.message.includes('Converting circular structure to JSON');
+            }
+            return false;
+        }
+
+        console.log(isLoop(obj))
+        console.log(isLoop(obj2))
+    </script>
+</body>
+
+</html>
