@@ -13,6 +13,7 @@
 - `~ + 选择器不同之处` 2022-5-23 `CSS\~ + 选择器不同\readme.md`
 - `position sticky` 2022-5-23 `CSS\sticky`
 - 不能展示动画效果的css属性 2022-5-23 `CSS\不能展示动画效果的css属性`
+- `img`标签中的`CORS`，实现在画布中使用跨域的img图像，就像在原生canvas中使用一样 2022-5-24
 
 ## JavaScript
 
@@ -30,6 +31,7 @@
 - 获取浏览器唯一标识 2022-5-24 `JavaScript\getBrowerFinger`
   -  由于不同系统显卡绘制的`canvas`时渲染参数，抗锯齿等算法不同，因此绘制的图片数据的CRC校验也不同
   - [相关插件库 fingerprintjs](https://github.com/fingerprintjs/fingerprintjs)
+- 实现`MyInstanceOf` 2022-5-24 `JavaScript\instanceOf`
 
 ## TypeScript
 - 了解使用`TS`高级用法 2022-5-23 `TypeScript\UtilityTypes`
