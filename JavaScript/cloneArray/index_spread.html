@@ -12,7 +12,7 @@
 
 
     <script>
-        // 使用扩展运算符实现浅拷贝
+        // 使用扩展运算符实现深，浅拷贝
         let arr = [1, 2, 3, 4, 5, 6, [{ 1: 12, 2: 24 }]]
         let arr2 = [...arr]
         console.log(arr === arr2)
@@ -23,7 +23,7 @@
         const deepClone = arr => arr.map(i => Array.isArray(i) ? deepClone(i) : i)
         let arr3 = deepClone(arr)
         arr[6][0] = { 1: 00, 2: 00 }
-        console.log(arr3)
+        console.log(arr3)  // [1,2,3,4,5,6,{"1": 12, "2": 24}]
     </script>
 </body>
 

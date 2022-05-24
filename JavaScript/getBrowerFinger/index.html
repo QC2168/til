@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+    <script>
+        // 由于不同系统显卡绘制的canvas时渲染参数，抗锯齿等算法不同
+        // 因此绘制的图片数据的CRC校验也不同
+        function getFinger() {
+            const canvas = document.createElement('canvas')
+            const ctx = canvas.getContext('2d')
+            ctx.font = "14px Arial";
+            ctx.fillStyle = "#ccc";
+            ctx.fillText("_island", 2, 15);
+            console.log(md5(canvas.toDataURL("image/jpeg")))
+            return md5(canvas.toDataURL("image/jpeg"))
+        }
+
+        requestIdleCallback(()=>{
+            getFinger()
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 先map再flat
+        let myFlatMap = function (fn) {
+            let target = this
+            return (target.map(i => fn(i))).flat()
+        }
+
+
+        Array.prototype.myFlatMap = myFlatMap
+
+        let arr = ["it's Sunny in", "", "California"];
+
+        let arr1 = arr.map(x => x.split(" "));
+        let arr2 = arr.flatMap(x => x.split(" "));
+        let arr3 = arr.myFlatMap(x => x.split(" "));
+
+        console.log(arr1); // [["it's","Sunny","in"],[""],["California"]]
+        console.log(arr2); // ["it's","Sunny","in", "", "California"]
+        console.log(arr3); // ["it's","Sunny","in", "", "California"]
+    </script>
+</body>
+
+</html>

@@ -26,8 +26,10 @@
   - array.slice
   - spread operator
   - json.stringify -> json.prase
-
-- 
+- 实现 `flatMap` 2022-5-24 `JavaScript\flatMap`
+- 获取浏览器唯一标识 2022-5-24 `JavaScript\getBrowerFinger`
+  -  由于不同系统显卡绘制的`canvas`时渲染参数，抗锯齿等算法不同，因此绘制的图片数据的CRC校验也不同
+  - [相关插件库 fingerprintjs](https://github.com/fingerprintjs/fingerprintjs)
 
 ## TypeScript
 - 了解使用`TS`高级用法 2022-5-23 `TypeScript\UtilityTypes`
