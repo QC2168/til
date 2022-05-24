@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        // concat实现浅拷贝
+        let arr = [1, 2, 3, 4, 5, 6, [{ 1: 12, 2: 24 }]]
+        let arr2 =arr.concat()
+        console.log(arr === arr2)
+        arr[6][0] = { 1: 00, 2: 00 }
+        console.log(arr) // [1,2,3,4,5,6,{"1": 0,"2": 0}]
+        console.log(arr2) // [1,2,3,4,5,6,{"1": 0,"2": 0}]
+
+    </script>
+</body>
+
+</html>
