@@ -10,8 +10,11 @@
 - 元素水平垂直居中 2022-5-23  `CSS\元素水平垂直居中`
 - `textarea` 禁止拉伸 2022-5-23  `HTML\textarea_no_stretching`
 - `CSS border`实现三角形及聊天信息框小尾巴 `CSS\triangle`
+- `~ + 选择器不同之处` 2022-5-23 `CSS\~ + 选择器不同\readme.md`
+- `position sticky` 2022-5-23 `CSS\sticky`
+- 不能展示动画效果的css属性 2022-5-23 `CSS\不能展示动画效果的css属性`
 
-## JAVASCRIPT
+## JavaScript
 
 - 复制文本到剪切板 & 监听监听剪切板中的内容 2022-5-23 `HTML\copy_text`
 - `requestIdleCallback` **幕后任务协作调度 API**  2022-5-23 `JavaScript\requestIdleCallback`
@@ -26,3 +29,5 @@
 
 - 
 
+## TypeScript
+- 了解使用`TS`高级用法 2022-5-23 `TypeScript\UtilityTypes`

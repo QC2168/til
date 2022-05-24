@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>我是div</div>
+    <p>我是p</p>
+    <p>我是p</p>
+    <div>我是div</div>
+    <p>我是p</p>
+    <div>
+        <p>我是div下面的p</p>
+        <p>我是div下面的p</p>
+    </div>
+    <span>我是span</span>
+</body>
+<style>
+    div+p {
+        color: red;
+    }
+
+    /* 第一个p标签变红色了 */
+
+    div~p{
+        color:red;
+    }
+
+    /* div后面的p标签都变成红色了 */
+</style>
+
+</html>
