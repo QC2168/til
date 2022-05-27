@@ -40,3 +40,7 @@
 
 ## TypeScript
 - 了解使用`TS`高级用法 2022-5-23 `TypeScript\UtilityTypes`
+
+## Vue
+
+- `v-model`语法糖 2022-5-27  `Vue\v-model语法糖`

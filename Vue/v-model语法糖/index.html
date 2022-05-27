@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3"></script>
+</head>
+
+<body>
+
+
+    <div id="app">
+        <input v-model="input1" type="text">
+        <input :value="input2" @input="e=>input2=e.target.value" type="text">
+        <input :value="input3" @input="input3=$event.target.value" type="text">
+        <div>
+            <div>input1:{{input1}}</div>
+            <div>input2:{{input2}}</div>
+            <div>input3:{{input3}}</div>
+
+        </div>
+    </div>
+
+    <script>
+        const { createApp } = Vue
+
+        createApp({
+            data() {
+                return {
+                    input1: 'Hello Vue!',
+                    input2: 'Hello Vue!',
+                    input3: 'Hello Vue!'
+                }
+            }
+        }).mount('#app')
+    </script>
+</body>
+
+</html>
