@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="child"></div>
+
+
+    </div>
+
+    <script>
+        let parentDom = document.querySelector('.parent')
+        let childDom = document.querySelector('.child')
+
+        parentDom.addEventListener('click', function (e) {
+            console.log('parentDom');
+            // 触发事件的元素
+            console.log('target', e.target)
+            // 事件绑定的元素
+            console.log('currentTarget', e.currentTarget)
+        })
+
+        childDom.addEventListener('click', function (e) {
+            e.stopPropagation()
+            console.log('childDom');
+            // 触发事件的元素
+            console.log('target', e.target)
+            // 事件绑定的元素
+            console.log('currentTarget', e.currentTarget)
+        })
+    </script>
+</body>
+<style>
+    .parent {
+        width: 200px;
+        height: 200px;
+        background: #000;
+    }
+
+    .bother {
+        width: 150px;
+        height: 150px;
+        background: #999;
+    }
+
+    .child {
+        width: 100px;
+        height: 100px;
+        background: #666;
+    }
+</style>
+
+</html>

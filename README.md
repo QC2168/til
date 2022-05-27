@@ -35,8 +35,8 @@
 - 判断一个对象是否有环
   - 收集对象中的对象，进行判断
   - 使用`stringify`，在`catch`中`includes('Converting circular structure to JSON')`
-
 - `once` 函数 2022-5-24 `JavaScript\once`
+- currentTarget和target的区别 2022-5-27 `JavaScript\currentTargetOrtarget`
 
 ## TypeScript
 - 了解使用`TS`高级用法 2022-5-23 `TypeScript\UtilityTypes`
