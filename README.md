@@ -37,6 +37,7 @@
   - 使用`stringify`，在`catch`中`includes('Converting circular structure to JSON')`
 - `once` 函数 2022-5-24 `JavaScript\once`
 - currentTarget和target的区别 2022-5-27 `JavaScript\currentTargetOrtarget`
+- 实现`async` 2022-5-27 `JavaScript\async`
 
 ## TypeScript
 - 了解使用`TS`高级用法 2022-5-23 `TypeScript\UtilityTypes`
