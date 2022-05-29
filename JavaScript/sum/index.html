@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        console.log(sum(1, 2, 3).valueOf()); //6
+        console.log(sum(2, 3)(2).valueOf()); //7
+        console.log(sum(1)(2)(3)(4).valueOf()); //10
+        console.log(sum(2)(4, 1)(2).valueOf()); //9
+        console.log(sum(1)(2)(3)(4)(5)(6).valueOf()); // 21
+
+        // 使用valueOf获取值
+        function sum(...num) {
+            let f = (...args) => sum(...num, ...args)
+            f.valueOf = () => num.reduce((p, i) => p + i, 0)
+            return f
+        }
+        console.log('----------------------------------');
+        console.log('------------直接计算---------------');
+        console.log('----------------------------------');
+
+        // 直接计算
+        const sum1 = (...rest) => [...rest].reduce((p, r) => p + i, 0)
+
+        console.log(sum(1, 2, 3) + sum(4, 5));
+
+        console.log(sum(10) * sum(10));
+    </script>
+</body>
+
+</html>

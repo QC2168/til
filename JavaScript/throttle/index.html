@@ -11,15 +11,15 @@
 <body>
     <input type="text" value="" class="input1">
     <!-- <input type="text" value="" class="input1" oninput="input1(this)"> -->
-    <input type="text" value="" oninput="input2(this)">
+    <input type="text" value="" onInput="input2()">
     <script>
 
         function input1(e) {
             console.log(e.target.value);
         }
 
-        function input2(e) {
-            console.log(e.value);
+        function input2() {
+            console.log(event);
         }
 
         const inputDom = document.querySelector('.input1')
