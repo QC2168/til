@@ -45,6 +45,7 @@
 - `sum` 2022-5-29 `JavaScript\sum`
 - `queryString` 2022-5-29 `JavaScript\queryString`
 - `delay` 2022-5-29 `JavaScript\delay`
+- `sleep` 2022-5-29 `JavaScript\sleep`
 ## TypeScript
 - 了解使用`TS`高级用法 2022-5-23 `TypeScript\UtilityTypes`
 
