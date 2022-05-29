@@ -43,6 +43,7 @@
 - `debounce` 2022-5-29 `JavaScript\debounce`
 - `throttle` 2022-5-29 `JavaScript\throttle`
 - `sum` 2022-5-29 `JavaScript\sum`
+- `queryString` 2022-5-29 `JavaScript\queryString`
 ## TypeScript
 - 了解使用`TS`高级用法 2022-5-23 `TypeScript\UtilityTypes`
 

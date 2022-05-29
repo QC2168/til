@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        const url = "https://shanyue.tech?a=3&b=4&c=5";
+        const url2 = "https://shanyue.tech?name=%E5%B1%B1%E6%9C%88&a=3";;
+
+        // 解析后得到 qs 如下
+        // const qs = {
+        //   a: 3,
+        //   b: 4,
+        //   c: 5,
+        // };
+
+        function queryString(url) {
+            const paramsStr = url.match(/\?([^/?#:]+)#?/)?.[1];
+            let qs = paramsStr.split('&')
+            qs = qs.map(i => {
+                return i.split('=')
+            })
+
+            return Object.fromEntries(qs)
+        }
+
+        // 使用浏览器api
+        // function queryString(url) {
+        //     let urlInstance = new URL(url)
+        //     let params = new URLSearchParams(urlInstance.search)
+        //     // todo
+        // }
+        console.log(queryString(url))
+        console.log(queryString(url2))
+    </script>
+</body>
+
+</html>
