@@ -40,6 +40,7 @@
 - 实现`async` 2022-5-27 `JavaScript\async`
 - `bit` 2022-5-28 `JavaScript\bit`
 - `leftpad` 2022-5-28 `JavaScript\leftpad`
+- `debounce` 2022-5-29 `JavaScript\debounce`
 ## TypeScript
 - 了解使用`TS`高级用法 2022-5-23 `TypeScript\UtilityTypes`
 

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <input class="input1" type="text" value="">
+    </div>
+    <div>
+        <input type="text" value="" onInput="input2(this.value)">
+
+    </div>
+    <script>
+        let inputDom = document.querySelector('.input1')
+        inputDom.addEventListener('input', debounce(input1))
+        function input1(e) {
+            console.log(e.target.value);
+        }
+        function input2(e) {
+            console.log(e);
+        }
+
+        // 节流
+        function debounce(fn, time = 500) {
+            // 利用闭包设置定时器
+            let timer = null
+            return function () {
+                let arg = arguments
+                // 当第二次执行时，如果上次的定时器还存在则销毁，阻止触发
+                if (timer) {
+                    clearTimeout(timer);
+                }
+                timer = setTimeout(function () {
+                    // 改变原来this执行
+                    // 传入参数
+                    fn.apply(this, [...arg])
+                }, time)
+            }
+        }
+    </script>
+</body>
+
+</html>
