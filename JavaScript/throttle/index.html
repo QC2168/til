@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" value="" class="input1">
+    <!-- <input type="text" value="" class="input1" oninput="input1(this)"> -->
+    <input type="text" value="" oninput="input2(this)">
+    <script>
+
+        function input1(e) {
+            console.log(e.target.value);
+        }
+
+        function input2(e) {
+            console.log(e.value);
+        }
+
+        const inputDom = document.querySelector('.input1')
+        inputDom.addEventListener('input', throttle(input1))
+
+
+        // 节流
+        // n秒内执行一次函数，减少开销
+        function throttle(fn, wait = 500) {
+            let last_time = 0
+            return function () {
+                let self = this
+                let arg = arguments
+                let now = Date.now()
+                if (now - last_time > wait) {
+                    // 由于作用域的关系,需要改变this指向
+                    fn.apply(self, arg)
+                    // 执行函数后更新上次执行时间
+                    last_time = now
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

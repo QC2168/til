@@ -41,6 +41,7 @@
 - `bit` 2022-5-28 `JavaScript\bit`
 - `leftpad` 2022-5-28 `JavaScript\leftpad`
 - `debounce` 2022-5-29 `JavaScript\debounce`
+- `throttle` 2022-5-29 `JavaScript\throttle`
 ## TypeScript
 - 了解使用`TS`高级用法 2022-5-23 `TypeScript\UtilityTypes`
 
