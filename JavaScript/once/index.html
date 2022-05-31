@@ -21,15 +21,10 @@
             }
         }
 
-        const f = (x) => x;
-
-        const onceF = once(f);
-
-        //=> 3
-        console.log(onceF(3))
-
-        //=> 3
-        console.log(onceF(4))
+        const foo = x => x;
+        const onceF = once(foo);
+        console.log(onceF(3)); // 3
+        console.log(onceF(4)); // 3
     </script>
 </body>
 
