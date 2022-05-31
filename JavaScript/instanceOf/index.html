@@ -21,17 +21,17 @@
         }
 
         //=> true
-        console.log(MyInstanceOf([], Array))
+        console.log(MyInstanceOf([], Array)) // true
 
         //=> true
-        console.log(MyInstanceOf([], Object))
+        console.log(MyInstanceOf([], Object)) // true
 
         //=> true
-        console.log(MyInstanceOf((x) => x, Object))
+        console.log(MyInstanceOf((x) => x, Object)) // true
 
 
         //=> false
-        console.log(MyInstanceOf("hello", Object))
+        console.log(MyInstanceOf("-island", Object)) //false
 
     </script>
 </body>
