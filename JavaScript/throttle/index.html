@@ -35,8 +35,7 @@
                 let arg = arguments
                 let now = Date.now()
                 if (now - last_time > wait) {
-                    // 由于作用域的关系,需要改变this指向
-                    fn.apply(self, arg)
+                    fn(...arg)
                     // 执行函数后更新上次执行时间
                     last_time = now
                 }

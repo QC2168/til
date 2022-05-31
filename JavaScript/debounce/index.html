@@ -28,18 +28,14 @@
 
         // 防抖
         function debounce(fn, time = 500) {
-            // 利用闭包设置定时器
-            let timer = null
+            let timer;
             return function () {
                 let arg = arguments
-                // 当第二次执行时，如果上次的定时器还存在则销毁，阻止触发
-                if (timer) {
-                    clearTimeout(timer);
-                }
+                // 当第二次执行时，如果上次的定时器还存在则销毁
+                if (timer) clearTimeout(timer);
                 timer = setTimeout(function () {
-                    // 改变原来this执行
                     // 传入参数
-                    fn.apply(this, [...arg])
+                    fn(...arg)
                 }, time)
             }
         }
