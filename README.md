@@ -50,7 +50,8 @@
 ## TypeScript
 - 了解使用`TS`高级用法 2022-5-23 `TypeScript\UtilityTypes`
 - `IndexedAccessTypes` `number`属性 2022-6-1 `TypeScript\IndexedAccessTypes `
-- 泛型 分发条件类型 2022-6-1 `TypeScript\DistributiveConditionalTypes`
+- 泛型 分发条件类型 2022-6-1 `TypeScript\DistributiveConditionalTypes` 
+- 映射 2022-6-1 `TypeScript\MappedTypes`
 
 ## Vue
 
