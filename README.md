@@ -52,6 +52,9 @@
 - `IndexedAccessTypes` `number`属性 2022-6-1 `TypeScript\IndexedAccessTypes `
 - 泛型 分发条件类型 2022-6-1 `TypeScript\DistributiveConditionalTypes` 
 - 映射 2022-6-1 `TypeScript\MappedTypes`
+- `is` 关键字 2022-6-2 `TypeScript\is`
+- `this`类型保护 2022-6-2 `TypeScript\this-basedTypeGuards`
+- 字面量模板类型 2022-6-2 `TypeScript\TemplateLiteralTypes`
 
 ## Vue
 
