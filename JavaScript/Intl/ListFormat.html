@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ListFormat用于对语言敏感的列表进行格式化
+        // locales参数
+        // option参数有两个
+        // localeMatcher 指匹配算法
+        // type 值内容连接类型
+        // conjunction disjunction unit
+        // style 表示样式
+        // long(默认值) short(表示 、 隔开) narrow(表示 “ ”隔开)
+        const res=['张三','李四','王五']
+        console.log(new Intl.ListFormat('en',{type:'disjunction'}).format(res))
+        // 张三, 李四, or 王五
+        console.log(new Intl.ListFormat('zh',{type:'conjunction'}).format(res))
+        // 张三、李四和王五
+    </script>
+</body>
+</html>

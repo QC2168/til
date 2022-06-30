@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 下面三个方法都是可以通过locales和options参数指定使用某一种语言来格式化规则的
+
+
+        // Date.prototype.toLocaleDateString()
+        // 指定使用某一项语言格式化规则
+        const event = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
+
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+
+        console.log(event.toLocaleDateString('de-DE', options));
+        // "Donnerstag, 20. Dezember 2012"
+
+        console.log(event.toLocaleDateString('ar-EG', options));
+        //  "الخميس، ٢٠ ديسمبر ٢٠١٢"
+
+        console.log(event.toLocaleDateString(undefined, options));
+        // "Thursday, December 20, 2012"
+
+
+        // Date.prototype.toLocaleTimeString 返回日期对象时间部分的字符串
+        console.log(new Date().toLocaleTimeString('en-Us'))
+        // 3:44:20 PM
+        console.log(new Date().toLocaleTimeString('zh'))
+        // 15:44:20
+
+        // Date.prototype.toLocaleString 返回日期对象的字符串
+        console.log(Date().toLocaleString('de-DE'));
+        // "Thu Jun 30 2022 15:50:42 GMT+0800 (China Standard Time)"
+        console.log(Date().toLocaleString('zh'));
+        // "Thu Jun 30 2022 15:50:42 GMT+0800 (China Standard Time)"
+    </script>
+</body>
+
+</html>

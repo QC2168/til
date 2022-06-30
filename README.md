@@ -49,6 +49,7 @@
 - `delay` 2022-5-29 `JavaScript\delay`
 - `sleep` 2022-5-29 `JavaScript\sleep`
 - `isInteger` 2022-5-30 `JavaScript\isInteger`
+- `Intl` 2022-6-30 `JavaScript\INTL`
 ## TypeScript
 - 了解使用`TS`高级用法 2022-5-23 `TypeScript\UtilityTypes`
 - `IndexedAccessTypes` `number`属性 2022-6-1 `TypeScript\IndexedAccessTypes `

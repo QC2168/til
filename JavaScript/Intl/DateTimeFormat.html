@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 和collator一样，指定国家地区对应的BCP47字符串，option是可选参数
+        // new Intl.DateTimeFormat([locales[, options]])
+
+        // 使用DateTimeFormat定制日期，例如想设置xxxx/xx/xx xx:xx:xx
+        console.log(new Intl.DateTimeFormat('zh-ch', {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: false
+        }).format(new Date()))
+
+    </script>
+</body>
+
+</html>

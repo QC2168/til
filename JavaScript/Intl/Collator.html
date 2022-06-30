@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- collator是排序器的意思，而Intl.collator是一个构造函数，可以对语言敏感的字符串比较  -->
+    <script>
+        // compare 用于和不同语言下的字符串比较。
+        // 在德语中，ä和a排序一样
+        console.log(new Intl.Collator('de').compare('ä', 'z'));
+        // 返回负值
+        // 瑞典语中，ä是排在字母z的后面
+        console.log(new Intl.Collator('sv').compare('ä', 'z'));
+        // 返回正值
+
+        // 结果是：["2", "15", "100"])
+        // 排序
+        // 在option中有一个numeric属性，代表是否按照数值进行比较
+        // 有一个经典的数值字符串排序
+        // ['15', '2', '100'].sort();
+        // 结果是：["100", "15", "2"]
+
+        console.log(['15', '2', '100'].sort(new Intl.Collator(undefined, { numeric: true }).compare));
+        //  ['2', '15', '100']
+
+        // 如果是中文排序
+        var arrUsername = ["陈坤", "邓超", "杜淳", "冯绍峰", "韩庚", "胡歌", "黄晓明", "贾乃亮", "李晨", "李易峰", "鹿晗", "井柏然", "刘烨", "陆毅", "孙红雷"];
+        // 使用sort排序是不正确的
+        // 结果是：["井柏然", "冯绍峰", "刘烨", "孙红雷", "李易峰", "李晨", "杜淳", "胡歌", "贾乃亮", "邓超", "陆毅", "陈坤", "韩庚", "鹿晗", "黄晓明"]
+        // 此时可以使用简体中文的BCF47语言标记字符串zh进行排序
+        arrUsername.sort(new Intl.Collator('zh').compare);
+        // 结果是：["陈坤", "邓超", "杜淳", "冯绍峰", "韩庚", "胡歌", "黄晓明", "贾乃亮", "井柏然", "李晨", "李易峰", "刘烨", "陆毅", "鹿晗", "孙红雷"]
+    </script>
+</body>
+
+</html>
