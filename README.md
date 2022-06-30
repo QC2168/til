@@ -61,3 +61,8 @@
 ## Vue
 
 - `v-model`语法糖 2022-5-27  `Vue\v-model语法糖`
+
+## HTTP
+
+- `status code 103 early hints` 
+- 
