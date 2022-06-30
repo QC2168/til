@@ -16,6 +16,7 @@
 - `position sticky` 2022-5-23 `CSS\sticky`
 - 不能展示动画效果的css属性 2022-5-23 `CSS\不能展示动画效果的css属性`
 - `img`标签中的`CORS`，实现在画布中使用跨域的img图像，就像在原生canvas中使用一样 2022-5-24
+- [30个你必须熟记的CSS选择器 ](https://code.tutsplus.com/zh-hans/tutorials/the-30-css-selectors-you-must-memorize--net-16048)
 
 ## JavaScript
 
