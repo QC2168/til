@@ -17,6 +17,7 @@
 - 不能展示动画效果的css属性 2022-5-23 `CSS\不能展示动画效果的css属性`
 - `img`标签中的`CORS`，实现在画布中使用跨域的img图像，就像在原生canvas中使用一样 2022-5-24
 - [30个你必须熟记的CSS选择器 ](https://code.tutsplus.com/zh-hans/tutorials/the-30-css-selectors-you-must-memorize--net-16048)
+- `mask` 2022-7-1 `CSS\mask`
 
 ## JavaScript
 
@@ -51,7 +52,7 @@
 - `sleep` 2022-5-29 `JavaScript\sleep`
 - `isInteger` 2022-5-30 `JavaScript\isInteger`
 - `Intl` 2022-6-30 `JavaScript\INTL`
-- `手写new`
+- `手写new` 2022-6-30 `JavaScript\new`
 ## TypeScript
 - 了解使用`TS`高级用法 2022-5-23 `TypeScript\UtilityTypes`
 - `IndexedAccessTypes` `number`属性 2022-6-1 `TypeScript\IndexedAccessTypes `
