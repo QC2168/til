@@ -61,6 +61,7 @@
 - `is` 关键字 2022-6-2 `TypeScript\is`
 - `this`类型保护 2022-6-2 `TypeScript\this-basedTypeGuards`
 - 字面量模板类型 2022-6-2 `TypeScript\TemplateLiteralTypes`
+- 魔数 2022-7-8 `TypeScript\magicNumber`
 
 ## Vue
 
