@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="grid">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>4</div>
+        <div>4</div>
+        <div>5</div>
+    </div>
+    <style>
+        .grid {
+            display: grid;
+            /*  声明了三列，宽度分别为 200px 100px 200px */
+            /* 简写 */
+            /* auto-fill 关键字：表示自动填充，让一行（或者一列）中尽可能的容纳更多的单元格。grid-template-columns: repeat(auto-fill, 200px) 表示列宽是 200 px，但列的数量是不固定的，只要浏览器能够容纳得下，就可以放置元素 */
+            grid-template-columns: repeat(auto-fill, 200px);
+            /* grid-template-columns: 200px 100px 200px; */
+
+            grid-gap: 5px;
+            /*  声明了两行，行高分别为 50px 50px  */
+            /* 超出了两行，高度不会被定义 */
+            /* 简写 */
+            grid-template-rows: repeat(2, 50px)
+                /* grid-template-rows: 50px 50px; */
+
+        }
+    </style>
+</body>
+
+</html>

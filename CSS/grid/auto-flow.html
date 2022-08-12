@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="grid">
+        <div class="one item">One</div>
+        <div class="two item">Two</div>
+        <div class="three item">Three</div>
+        <div class="four item">Four</div>
+        <div class="five item">Five</div>
+        <div class="six item">Six</div>
+        <div class="five item">Seven</div>
+
+    </div>
+    <style>
+        .one {
+            background: #19CAAD;
+        }
+
+        .two {
+            background: #8CC7B5;
+        }
+
+        .three {
+            background: #D1BA74;
+        }
+
+        .four {
+            background: #BEE7E9;
+        }
+
+        .five {
+            background: #E6CEAC;
+        }
+
+        .six {
+            background: #ECAD9E;
+            grid-column-start: span 2;
+        }
+
+        .item {
+            text-align: center;
+            font-size: 200%;
+            color: #fff;
+        }
+
+
+        .grid {
+            display: grid;
+            border: 1px solid #0f0;
+            grid-template-columns: repeat(3, 150px);
+            grid-template-rows:repeat(3,150px);
+            grid-gap: 5px;
+            /* 先行后列  因为seven的宽度刚好满足five右边的宽度 */
+            /* grid-auto-flow: row dense; */
+            /* 先列后行 */
+            grid-auto-flow: column;
+
+        }
+    </style>
+</body>
+
+</html>

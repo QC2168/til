@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="grid">
+        <div class="one item">One</div>
+        <div class="two item">Two</div>
+        <div class="three item">Three</div>
+        <div class="four item">Four</div>
+        <div class="five item">Five</div>
+        <div class="six item">Six</div>
+        <div class="seven item">seven</div>
+    </div>
+    <style>
+        .one {
+            background: #19CAAD;
+        }
+
+        .two {
+            background: #8CC7B5;
+        }
+
+        .three {
+            background: #D1BA74;
+        }
+
+        .four {
+            background: #BEE7E9;
+        }
+
+        .five {
+            background: #E6CEAC;
+        }
+
+        .six {
+            background: #ECAD9E;
+        }
+.seven{
+    background: #e0e;
+    height: 200px;
+}
+        .item {
+            text-align: center;
+            font-size: 200%;
+            color: #fff;
+        }
+
+
+        .grid {
+            display: grid;
+            border: 1px solid #0f0;
+            grid-template-columns: repeat(3, 150px);
+            grid-template-rows:150px 150px;
+            /* 我们上面只定义了两行150px高度的行 */
+            /* 如果全部元素摆放溢出这两行，那么就会这个元素的高度来定义新一行的高度 */
+            /* 此时，我们可以通过auto-rows属性指定后续新增行的高度 */
+grid-auto-rows: 150px;
+        }
+    </style>
+</body>
+
+</html>

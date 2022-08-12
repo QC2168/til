@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div class="grid">
+    <div class="one item">One</div>
+    <div class="two item">Two</div>
+    <div class="three item">Three</div>
+    <div class="four item">Four</div>
+    <div class="five item">Five</div>
+    <div class="six item">Six</div>
+  </div>
+  <style>
+    .one {
+      background: #19CAAD;
+    }
+
+    .two {
+      background: #8CC7B5;
+    }
+
+    .three {
+      background: #D1BA74;
+    }
+
+    .four {
+      background: #BEE7E9;
+    }
+
+    .five {
+      background: #E6CEAC;
+    }
+
+    .six {
+      background: #ECAD9E;
+    }
+
+    .item {
+      text-align: center;
+      font-size: 200%;
+      color: #fff;
+    }
+
+
+    .grid {
+      display: grid;
+      border: 1px solid #0f0;
+      grid-template-columns: repeat(auto-fill, minmax(100px, 200px));
+      grid-template-rows: repeat(2, 50px);
+      /* 网格之间的空隙 */
+      /* grid-row-gap:10px ;
+            grid-column-gap:10px ; */
+      /* 以上写法可以简写 */
+      grid-gap: 10px;
+
+    }
+  </style>
+</body>
+
+</html>
