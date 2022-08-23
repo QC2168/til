@@ -13,15 +13,24 @@
 </body>
 <script>
     class Demo {
-        constructor(arr) {
-            this.arr = arr
+        constructor(num) {
+            this.num = num
+        }
+        *[Symbol.iterator]() {
+            let i = 0
+            while (i < this.num) {
+                yield i++
+            }
         }
     }
     const d1 = new Demo(5)
-    // 实现遍历
-    for await (const item of d1){
-        
-    }
+
+        // 实现遍历
+        for(const item of d1) {
+            console.log(item);
+        }
+
+
 </script>
 
 </html>
