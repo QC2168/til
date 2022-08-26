@@ -66,6 +66,7 @@
 - 字面量模板类型 2022-6-2 `TypeScript\TemplateLiteralTypes`
 - 魔数 2022-7-8 `TypeScript\magicNumber`
 - 交换变量 2022-8-23 `JavaScript\交换变量`
+- 推断`promise`类型 `Typescript\interPromiseType`
 
 ## Vue
 
