@@ -76,3 +76,7 @@
 - `status code 103 early hints` 
 - [SPDY-Google开发的基于传输控制协议的应用层协议](https://zh.m.wikipedia.org/wiki/SPDY) 2022-7-8
 - `status code 206 partial content` 2022-7-12
+
+
+## Node
+- `process.env.npm_config_user_agent` 2022-8-29
