@@ -82,3 +82,6 @@
 
 ## Node
 - `process.env.npm_config_user_agent` 2022-8-29
+
+## tools
+- 找到没有被用到的文件依赖 `knip`
