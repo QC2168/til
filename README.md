@@ -78,6 +78,7 @@
 - `status code 103 early hints` 
 - [SPDY-Google开发的基于传输控制协议的应用层协议](https://zh.m.wikipedia.org/wiki/SPDY) 2022-7-8
 - `status code 206 partial content` 2022-7-12
+- ` 多个浏览器窗口会单独创建tcp连接吗` 2022-9-25
 
 
 ## Node
