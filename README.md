@@ -84,5 +84,8 @@
 ## Node
 - `process.env.npm_config_user_agent` 2022-8-29
 
+##
+- [Chromium 渲染流水线](https://zhuanlan.zhihu.com/p/574069391) 2022-10-16
+
 ## tools
 - 找到没有被用到的文件依赖 `knip`
