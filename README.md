@@ -58,6 +58,7 @@
 - `es6 import exec` 2022-7-12 `JavaScript\importExec`
 - `Iterator, asyncIterator` 2022-7-14 `JavaScript\Iterator`
 - `LRU` 2022-11-14 `JavaScript\LRU`
+- `ShadowRoot` 2022-11-15 `JavaScript\ShadowRoot`
 ## TypeScript
 - 了解使用`TS`高级用法 2022-5-23 `TypeScript\UtilityTypes`
 - `IndexedAccessTypes` `number`属性 2022-6-1 `TypeScript\IndexedAccessTypes `
