@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        #box img {
+            max-width: 100%;
+            max-height: 100%;
+            display: block;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <input id="fileInput" type="file" />
+    <div id="box">
+        <img id="img" src="" alt="">
+    </div>
+</body>
+<script>
+    let fileId = document.getElementById('fileInput')
+    let img = document.getElementById('img')
+    const fileToDataURL = (file) => {
+        return new Promise((resolve) => {
+            const reader = new FileReader()
+            reader.onloadend = (e) => resolve((e.target).result)
+            reader.readAsDataURL(file)
+        })
+    }
+
+    const dataURLToImage = (dataURL) => {
+        return new Promise((resolve) => {
+            const img = new Image()
+            img.onload = () => resolve(img)
+            img.src = dataURL
+        })
+    }
+
+    const canvastoFile = (canvas, type, quality) => {
+        return new Promise((resolve) => canvas.toBlob((blob) => resolve(blob), type, quality))
+    }
+
+    const compressionFile = async (file, type = 'image/jpeg', quality = 0.5) => {
+        const fileName = file.name
+        const canvas = document.createElement('canvas')
+        const context = canvas.getContext('2d')
+        const base64 = await fileToDataURL(file)
+        const img = await dataURLToImage(base64)
+        canvas.width = img.width
+        canvas.height = img.height
+        context.clearRect(0, 0, img.width, img.height)
+        context.drawImage(img, 0, 0, img.width, img.height)
+        const blob = (await canvastoFile(canvas, type, quality))  // quality:0.5可根据实际情况计算
+        const newFile = await new File([blob], fileName, {
+            type: type
+        })
+        return newFile
+    }
+
+    fileId.onchange = function (e) {
+        let file = e.target.files[0]
+        compressionFile(file, 0.8).then(res => {
+            console.log({ 'before': file.size, 'after': res.size })
+            img.src = window.URL.createObjectURL(res);
+        })
+    }
+
+</script>
+
+</html>

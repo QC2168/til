@@ -59,6 +59,7 @@
 - `Iterator, asyncIterator` 2022-7-14 `JavaScript\Iterator`
 - `LRU` 2022-11-14 `JavaScript\LRU`
 - `ShadowRoot` 2022-11-15 `JavaScript\ShadowRoot`
+- `compress` 2022-12-18 `JavaScript\compress`
 ## TypeScript
 - 了解使用`TS`高级用法 2022-5-23 `TypeScript\UtilityTypes`
 - `IndexedAccessTypes` `number`属性 2022-6-1 `TypeScript\IndexedAccessTypes `
